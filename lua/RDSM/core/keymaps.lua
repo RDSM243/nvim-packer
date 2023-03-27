@@ -5,6 +5,10 @@ local keymap = vim.keymap
 --general keymaps
 keymap.set("i", "jk", "<ESC>") -- go to command mode
 keymap.set("i", "<C-s>", "<ESC>:w<CR>") -- save the code (INSERT)
+keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi")
+keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
+keymap.set("n", "<A-j>", ":m .+1<CR>==")
+keymap.set("n", "<A-k>", ":m .-2<CR>==")
 keymap.set("n", "<C-s>", ":w<CR>") -- save the code (NORMAL)
 keymap.set("n", "<leader>nh", ":nohl<CR>") -- clear highlights
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
@@ -17,6 +21,7 @@ keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") --file explorer
+keymap.set("n", "<leader>nh", ":nohl<CR>") -- clear search highlights
 
 --telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
