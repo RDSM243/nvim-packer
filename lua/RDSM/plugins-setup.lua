@@ -57,7 +57,14 @@ return packer.startup(function(use)
     --configuring lsp servers
     use("neovim/nvim-lspconfig")
     use("hrsh7th/cmp-nvim-lsp")
-    use({"glepnir/lspsaga.nvim", branch = "main"})
+    use({
+    "glepnir/lspsaga.nvim",
+      branch = "main",
+      requires = {
+        { "nvim-tree/nvim-web-devicons" },
+        { "nvim-treesitter/nvim-treesitter" },
+      },
+    }) -- enhanced lsp uis
     use("jose-elias-alvarez/typescript.nvim")
     use("onsails/lspkind.nvim")
 
@@ -65,13 +72,14 @@ return packer.startup(function(use)
     use({
       "nvim-treesitter/nvim-treesitter",
       run = function()
-        require("nvim-treesitter.install").update({with_sync = true})
+        local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+        ts_update()
       end,
-        })
+    })
 
     --auto closing
     use("windwp/nvim-autopairs")
-    use("windwp/nvim-ts-autotag")
+    use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" })
 
     --git signs plugin
     use("lewis6991/gitsigns.nvim")
