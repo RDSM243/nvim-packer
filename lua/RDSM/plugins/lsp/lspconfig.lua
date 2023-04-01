@@ -52,7 +52,7 @@ lspconfig["clangd"].setup({
   on_attach = on_attach,
 })
 
-lspconfig["jedi_language_server"].setup({
+lspconfig["pyright"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
@@ -87,8 +87,8 @@ typescript.setup({
 })
 
 -- configure emmet language server
-lspconfig["emmet_ls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-  filetypes = { "clangd", "jedi_language_server" },
-})
+--lspconfig["emmet_ls"].setup({
+--  capabilities = capabilities,
+--  on_attach = on_attach,
+--  filetypes = { },
+--})
