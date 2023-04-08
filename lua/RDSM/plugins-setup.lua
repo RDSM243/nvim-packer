@@ -84,6 +84,15 @@ return packer.startup(function(use)
     --git signs plugin
     use("lewis6991/gitsigns.nvim")
 
+    --toggle terminal
+    use ({"akinsho/toggleterm.nvim", tag = "*"})
+
+    -- deal with sessions
+    use ({
+      "rmagatti/session-lens",
+      requires = {"rmagatti/auto-session", "nvim-telescope/telescope.nvim"},
+    })
+
     if packer_bootstrap then
         require("packer").sync()
       end
