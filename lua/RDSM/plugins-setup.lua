@@ -87,10 +87,20 @@ return packer.startup(function(use)
     --toggle terminal
     use ({"akinsho/toggleterm.nvim", tag = "*"})
 
-    -- deal with sessions
+    -- deal with sessions    
+    use {
+      'rmagatti/auto-session',
+      config = function()
+        require("auto-session").setup {
+          log_level = "error",
+          auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
+        }
+      end
+    }
+    
     use ({
       "rmagatti/session-lens",
-      requires = {"rmagatti/auto-session", "nvim-telescope/telescope.nvim"},
+      requires = {"nvim-telescope/telescope.nvim"},
     })
 
     if packer_bootstrap then
