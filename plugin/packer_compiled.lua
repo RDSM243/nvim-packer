@@ -95,6 +95,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\MSDR1\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\auto-session",
     url = "https://github.com/rmagatti/auto-session"
   },
+  ["ayu-vim"] = {
+    loaded = true,
+    path = "C:\\Users\\MSDR1\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\ayu-vim",
+    url = "https://github.com/ayu-theme/ayu-vim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "C:\\Users\\MSDR1\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer",

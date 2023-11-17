@@ -28,7 +28,6 @@ return packer.startup(function(use)
 
     use("wbthomason/packer.nvim") -- packer
     use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
-    use("morhetz/gruvbox") --colorscheme
     use("christoomey/vim-tmux-navigator") --split window navigation
     use("szw/vim-maximizer") -- maximizes and restore current window
     use("tpope/vim-surround")
@@ -39,7 +38,13 @@ return packer.startup(function(use)
     use("nvim-lualine/lualine.nvim") --statusline
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
     use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
-    
+
+    --colorschemes
+    use("Shatur/neovim-ayu") 
+    use("k4yt3x/ayu-vim-darker")
+    use("Alexis12119/nightly.nvim")
+    use("folke/tokyonight.nvim")
+
     -- autocompletion
     use("hrsh7th/nvim-cmp") -- completion plugin
     use("hrsh7th/cmp-buffer") -- source for text in buffer
@@ -85,20 +90,12 @@ return packer.startup(function(use)
     use("lewis6991/gitsigns.nvim")
 
     --toggle terminal
-    use ({"akinsho/toggleterm.nvim", tag = "*"})
+    use({"akinsho/toggleterm.nvim", tag = "*"})
 
     -- deal with sessions    
-    use {
-      'rmagatti/auto-session',
-      config = function()
-        require("auto-session").setup {
-          log_level = "error",
-          auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/"},
-        }
-      end
-    }
+    use("rmagatti/auto-session")
     
-    use ({
+    use({
       "rmagatti/session-lens",
       requires = {"nvim-telescope/telescope.nvim"},
     })

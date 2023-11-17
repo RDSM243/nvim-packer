@@ -18,6 +18,7 @@ mason_lspconfig.setup({
       "lua_ls",
       "pyright",
       "emmet_ls",
+      "rust_analyzer",
     },
 
     -- auto-install configured servers (with lspconfig)
