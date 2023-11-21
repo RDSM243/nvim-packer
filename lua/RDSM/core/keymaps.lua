@@ -9,6 +9,8 @@ keymap.set("i", "<A-j>", "<Esc>:m .+1<CR>==gi")
 keymap.set("i", "<A-k>", "<Esc>:m .-2<CR>==gi")
 keymap.set("n", "<A-j>", ":m .+1<CR>==")
 keymap.set("n", "<A-k>", ":m .-2<CR>==")
+keymap.set("v", "<A-j>", ":m '>+1<CR>==")
+keymap.set("v", "<A-k>", ":m '<-2<CR>==")
 keymap.set("n", "<C-s>", ":w<CR>") -- save the code (NORMAL)
 keymap.set("n", "<leader>nh", ":nohl<CR>") -- clear highlights
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
