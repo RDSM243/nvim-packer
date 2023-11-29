@@ -4,7 +4,10 @@ if not status_ok then
 end
 
 toggleterm.setup({
-  size = 10,
+  direction = 'float',
+  --direction = 'horizontal',
+  --size = 10,
   open_mapping = [[<C-t>]],
   hide_numbers = true,
+  close_on_exit = true,
 })

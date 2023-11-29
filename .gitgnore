@@ -1,0 +1,8 @@
+#Files
+nvim-configs
+
+
+#Folders
+plugin/
+.exe/
+.git/
